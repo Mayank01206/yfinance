@@ -5,10 +5,8 @@ from sqlalchemy import create_engine
 # Database connection configuration
 DATABASE_URI = 'postgresql://postgres:Sup%4072164@localhost:5432/Taxanomy'
 
-
 # Flag to control whether to save Excel file
-SAVE_TO_EXCEL = True  # Change this to False if you don't want to save the Excel file
-
+SAVE_TO_EXCEL = True  
 
 # Function to validate and add missing columns
 def validate_columns(final_data, required_columns):
@@ -16,7 +14,7 @@ def validate_columns(final_data, required_columns):
     if missing_columns:
         print(f"Adding missing columns: {missing_columns}")
         for col in missing_columns:
-            final_data[col] = None  # Add missing columns with default None values
+            final_data[col] = None  
     return final_data
 
 def fetch_stock_data(symbol, start_date, end_date):
